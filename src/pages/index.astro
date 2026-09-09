@@ -1,17 +1,179 @@
 ---
-
+const canonicalUrl = "https://awarselabs.com/";
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Awarse Labs",
+  "url": canonicalUrl,
+  "description": "Local-first AI developer tools for FinOps SaaS seat reclamation and Playwright QA test automation.",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Awarse Labs",
+    "url": canonicalUrl
+  }
+};
 ---
 
+<!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Awarse Labs | Local-First AI Tools for FinOps & QA Automation</title>
+    <meta name="description" content="Eliminate zombie SaaS licenses and flaky Playwright tests. Local-first AI developer tools built on FastMCP for GitHub, Slack, and CI pipelines." />
+    <meta name="keywords" content="FinOps, SaaS seat reclamation, SeatPrune, Healwright, Playwright self-healing, FastMCP, developer tools, license auditing" />
+    <link rel="canonical" href={canonicalUrl} />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Awarse Labs | Local-First AI Tools for FinOps & QA Automation" />
+    <meta property="og:description" content="Local-first AI developer tools for FinOps SaaS seat reclamation and Playwright QA automation." />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:site_name" content="Awarse Labs" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Awarse Labs | Local-First AI Tools" />
+    <meta name="twitter:description" content="Local-first AI developer tools for FinOps SaaS seat reclamation and Playwright QA automation." />
+
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  </head>
+  <body class="bg-slate-950 text-slate-100 antialiased selection:bg-cyan-500 selection:text-white min-h-screen flex flex-col">
+    <!-- Header -->
+    <header class="border-b border-slate-800 bg-slate-950/80 backdrop-blur sticky top-0 z-20 px-6 py-4 flex items-center justify-between">
+      <a href="/" class="text-xl font-bold tracking-tight text-white flex items-center gap-2">
+        <span class="p-1.5 bg-gradient-to-tr from-cyan-500 to-blue-600 rounded-lg text-white font-mono text-sm shadow-lg shadow-cyan-500/20">AL</span>
+        <span>Awarse<span class="text-cyan-400">Labs</span></span>
+      </a>
+      <nav class="flex items-center space-x-6 text-sm text-slate-400">
+        <a href="/docs" class="hover:text-cyan-400 transition">Docs</a>
+        <a href="/docs/seatprune/quickstart" class="hover:text-cyan-400 transition">SeatPrune</a>
+        <a href="/docs/healwright/playwright-self-healing-locators" class="hover:text-cyan-400 transition">Healwright</a>
+        <a href="https://github.com/awarselabs/awarse-mcp" target="_blank" rel="noopener" class="text-slate-300 hover:text-white transition flex items-center gap-1 bg-slate-900 border border-slate-800 px-3 py-1.5 rounded-full">
+          <span>GitHub</span>
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+        </a>
+      </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-1">
+      <!-- Hero Section -->
+      <section class="relative pt-20 pb-16 px-6 max-w-7xl mx-auto text-center">
+        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-cyan-500/30 bg-cyan-950/40 text-cyan-400 text-xs font-medium mb-8">
+          <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
+          FastMCP & Local-First AI Architecture
+        </div>
+        <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight text-white mb-6 max-w-4xl mx-auto leading-tight">
+          Local-First AI Developer Tools for <span class="bg-gradient-to-r from-cyan-400 via-teal-300 to-blue-500 bg-clip-text text-transparent">FinOps & QA Automation</span>
+        </h1>
+        <p class="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto mb-10 leading-relaxed">
+          Eliminate zombie SaaS licenses and repair flaky Playwright tests automatically without requiring invasive SaaS data egress or third-party cloud lock-in.
+        </p>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a href="/docs" class="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-semibold transition shadow-lg shadow-cyan-500/25 flex items-center justify-center gap-2">
+            <span>Explore Documentation</span>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+          </a>
+          <a href="https://github.com/awarselabs/awarse-mcp" target="_blank" rel="noopener" class="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-200 border border-slate-800 font-medium transition flex items-center justify-center gap-2">
+            <span>View Source Code</span>
+          </a>
+        </div>
+      </section>
+
+      <!-- Products Showcase -->
+      <section class="py-16 px-6 max-w-7xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-2xl md:text-3xl font-bold text-white tracking-tight mb-3">Core Developer Tools</h2>
+          <p class="text-slate-400 text-sm md:text-base">Built natively for the Model Context Protocol (MCP) and FastMCP execution environments.</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8">
+          <!-- SeatPrune Card -->
+          <div class="bg-slate-900/60 border border-slate-800 rounded-2xl p-8 flex flex-col justify-between hover:border-cyan-500/40 transition group relative overflow-hidden">
+            <div class="absolute top-0 right-0 p-6 opacity-10 group-hover:opacity-20 transition text-cyan-400">
+              <svg class="w-32 h-32" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+            </div>
+            <div>
+              <div class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-emerald-950/60 border border-emerald-500/30 text-emerald-400 mb-4">
+                FinOps & Spend Governance
+              </div>
+              <h3 class="text-2xl font-bold text-white mb-3 flex items-center gap-2">
+                <span>SeatPrune</span>
+              </h3>
+              <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                Automated SaaS seat reclamation for GitHub Enterprise, Copilot, Slack, and Jira. Detect inactive users, audit activity profiles, and reclaim enterprise seat licenses with dry-run safety guards.
+              </p>
+              <div class="bg-slate-950 border border-slate-800/80 rounded-xl p-4 mb-6 font-mono text-xs text-slate-300">
+                <div class="text-slate-500 mb-1"># Execute audit scan</div>
+                <div class="text-cyan-400">seatprune scan --config seatprune.yaml --dry-run</div>
+              </div>
+            </div>
+            <a href="/docs/seatprune/quickstart" class="inline-flex items-center text-sm font-semibold text-cyan-400 group-hover:text-cyan-300 transition gap-1">
+              <span>Read SeatPrune Quickstart</span>
+              <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+
+          <!-- Healwright Card -->
+          <div class="bg-slate-900/60 border border-slate-800 rounded-2xl p-8 flex flex-col justify-between hover:border-cyan-500/40 transition group relative overflow-hidden">
+            <div class="absolute top-0 right-0 p-6 opacity-10 group-hover:opacity-20 transition text-cyan-400">
+              <svg class="w-32 h-32" fill="currentColor" viewBox="0 0 24 24"><path d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.07.62-.07.94s.02.64.07.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"/></svg>
+            </div>
+            <div>
+              <div class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-blue-950/60 border border-blue-500/30 text-blue-400 mb-4">
+                Playwright QA Automation
+              </div>
+              <h3 class="text-2xl font-bold text-white mb-3 flex items-center gap-2">
+                <span>Healwright</span>
+              </h3>
+              <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                Playwright self-healing locator engine powered by FastMCP. Automatically intercepts failed UI selectors, computes updated DOM fallbacks via AI, and patches tests in real time.
+              </p>
+              <div class="bg-slate-950 border border-slate-800/80 rounded-xl p-4 mb-6 font-mono text-xs text-slate-300">
+                <div class="text-slate-500 mb-1"># FastMCP ephemeral self-healing</div>
+                <div class="text-cyan-400">pip install healwright</div>
+              </div>
+            </div>
+            <a href="/docs/healwright/playwright-self-healing-locators" class="inline-flex items-center text-sm font-semibold text-cyan-400 group-hover:text-cyan-300 transition gap-1">
+              <span>Read Healwright Guide</span>
+              <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Architecture Highlights -->
+      <section class="py-16 px-6 max-w-7xl mx-auto border-t border-slate-800/60">
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="space-y-3">
+            <div class="w-10 h-10 rounded-lg bg-cyan-950/80 border border-cyan-500/30 flex items-center justify-center text-cyan-400 font-bold">🔒</div>
+            <h4 class="text-lg font-semibold text-white">Local-First & Data Safe</h4>
+            <p class="text-slate-400 text-sm leading-relaxed">No user activity logs or internal directory data leave your local workstation or CI runner context.</p>
+          </div>
+          <div class="space-y-3">
+            <div class="w-10 h-10 rounded-lg bg-cyan-950/80 border border-cyan-500/30 flex items-center justify-center text-cyan-400 font-bold">⚡</div>
+            <h4 class="text-lg font-semibold text-white">FastMCP Protocol</h4>
+            <p class="text-slate-400 text-sm leading-relaxed">Ephemerally invoked tool context for Model Context Protocol agents without persistent background daemon tax.</p>
+          </div>
+          <div class="space-y-3">
+            <div class="w-10 h-10 rounded-lg bg-cyan-950/80 border border-cyan-500/30 flex items-center justify-center text-cyan-400 font-bold">🛡️</div>
+            <h4 class="text-lg font-semibold text-white">Safety Locks</h4>
+            <p class="text-slate-400 text-sm leading-relaxed">Default `--dry-run` safety guards ensure de-provisioning and locator mutations are verified before live execution.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-800 bg-slate-950 px-6 py-8 text-slate-500 text-sm">
+      <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div>© 2026 Awarse Labs. All rights reserved.</div>
+        <div class="flex items-center space-x-6">
+          <a href="/docs" class="hover:text-slate-300 transition">Docs</a>
+          <a href="/llms.txt" class="hover:text-slate-300 transition">llms.txt</a>
+          <a href="https://pypi.org/project/seatprune/" target="_blank" rel="noopener" class="hover:text-slate-300 transition">PyPI (SeatPrune)</a>
+          <a href="https://pypi.org/project/healwright/" target="_blank" rel="noopener" class="hover:text-slate-300 transition">PyPI (Healwright)</a>
+        </div>
+      </div>
+    </footer>
+  </body>
 </html>

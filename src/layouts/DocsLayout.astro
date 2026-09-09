@@ -68,15 +68,29 @@ const jsonLd = {
       <aside class="w-64 border-r border-slate-800 pr-6 hidden md:block">
         <div class="space-y-6 text-sm">
           <div>
-            <h3 class="font-semibold text-white uppercase tracking-wider text-xs mb-3 text-slate-500">Healwright</h3>
-            <ul class="space-y-2 text-slate-400">
-              <li><a href="/docs/healwright/playwright-self-healing-locators" class="hover:text-cyan-400">Self-Healing Locators</a></li>
+            <h3 class="font-semibold uppercase tracking-wider text-xs mb-3 text-slate-500">Healwright</h3>
+            <ul class="space-y-2">
+              <li>
+                <a 
+                  href="/docs/healwright/playwright-self-healing-locators" 
+                  class={slug === 'healwright/playwright-self-healing-locators' ? 'text-cyan-400 font-medium' : 'text-slate-400 hover:text-cyan-400 transition'}
+                >
+                  Self-Healing Locators
+                </a>
+              </li>
             </ul>
           </div>
           <div>
-            <h3 class="font-semibold text-white uppercase tracking-wider text-xs mb-3 text-slate-500">SeatPrune</h3>
-            <ul class="space-y-2 text-slate-400">
-              <li><a href="/docs/seatprune/quickstart" class="hover:text-cyan-400">FinOps Setup</a></li>
+            <h3 class="font-semibold uppercase tracking-wider text-xs mb-3 text-slate-500">SeatPrune</h3>
+            <ul class="space-y-2">
+              <li>
+                <a 
+                  href="/docs/seatprune/quickstart" 
+                  class={slug === 'seatprune/quickstart' ? 'text-cyan-400 font-medium' : 'text-slate-400 hover:text-cyan-400 transition'}
+                >
+                  Quickstart Guide
+                </a>
+              </li>
             </ul>
           </div>
         </div>

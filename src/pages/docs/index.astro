@@ -1,0 +1,86 @@
+---
+const canonicalUrl = "https://awarselabs.com/docs";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Documentation Overview | Awarse Labs</title>
+    <meta name="description" content="Official documentation and quickstart guides for Awarse Labs developer tools: SeatPrune FinOps and Healwright Playwright self-healing." />
+    <link rel="canonical" href={canonicalUrl} />
+  </head>
+  <body class="bg-slate-950 text-slate-100 antialiased selection:bg-cyan-500 selection:text-white min-h-screen flex flex-col">
+    <!-- Header -->
+    <header class="border-b border-slate-800 bg-slate-950/80 backdrop-blur sticky top-0 z-20 px-6 py-4 flex items-center justify-between">
+      <a href="/" class="text-xl font-bold tracking-tight text-white flex items-center gap-2">
+        <span class="p-1.5 bg-gradient-to-tr from-cyan-500 to-blue-600 rounded-lg text-white font-mono text-sm shadow-lg shadow-cyan-500/20">AL</span>
+        <span>Awarse<span class="text-cyan-400">Labs</span></span>
+      </a>
+      <nav class="flex items-center space-x-6 text-sm text-slate-400">
+        <a href="/docs" class="text-cyan-400 font-medium">Docs</a>
+        <a href="https://github.com/awarselabs/awarse-mcp" target="_blank" rel="noopener" class="hover:text-white transition">GitHub</a>
+      </nav>
+    </header>
+
+    <main class="flex-1 max-w-5xl mx-auto px-6 py-12">
+      <div class="mb-10">
+        <h1 class="text-3xl md:text-4xl font-extrabold text-white tracking-tight mb-3">Documentation Overview</h1>
+        <p class="text-slate-400 text-lg">Explore technical quickstarts and integration guides for Awarse Labs tools.</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8">
+        <!-- SeatPrune Guide -->
+        <a href="/docs/seatprune/quickstart" class="block bg-slate-900/60 border border-slate-800 rounded-2xl p-8 hover:border-cyan-500/50 transition group">
+          <div class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-emerald-950/60 border border-emerald-500/30 text-emerald-400 mb-4">
+            FinOps & Spend Governance
+          </div>
+          <h2 class="text-2xl font-bold text-white mb-2 group-hover:text-cyan-400 transition">SeatPrune Quickstart</h2>
+          <p class="text-slate-400 text-sm leading-relaxed mb-6">
+            Set up SeatPrune to audit and reclaim inactive SaaS seats across GitHub, Slack, and Jira with automated CLI reporting and GitHub Actions integration.
+          </p>
+          <div class="text-sm font-semibold text-cyan-400 flex items-center gap-1 group-hover:gap-2 transition-all">
+            <span>Read Guide</span>
+            <span>→</span>
+          </div>
+        </a>
+
+        <!-- Healwright Guide -->
+        <a href="/docs/healwright/playwright-self-healing-locators" class="block bg-slate-900/60 border border-slate-800 rounded-2xl p-8 hover:border-cyan-500/50 transition group">
+          <div class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-blue-950/60 border border-blue-500/30 text-blue-400 mb-4">
+            Playwright QA Automation
+          </div>
+          <h2 class="text-2xl font-bold text-white mb-2 group-hover:text-cyan-400 transition">Self-Healing Locators</h2>
+          <p class="text-slate-400 text-sm leading-relaxed mb-6">
+            Learn how Healwright intercepts broken DOM selectors during Playwright test runs and uses FastMCP to repair locators dynamically.
+          </p>
+          <div class="text-sm font-semibold text-cyan-400 flex items-center gap-1 group-hover:gap-2 transition-all">
+            <span>Read Guide</span>
+            <span>→</span>
+          </div>
+        </a>
+      </div>
+
+      <div class="mt-12 bg-slate-900/40 border border-slate-800/80 rounded-2xl p-6 flex flex-col md:flex-row items-center justify-between gap-4">
+        <div>
+          <h3 class="font-semibold text-white mb-1">Looking for AI Model Documentation?</h3>
+          <p class="text-slate-400 text-sm">We provide an LLM-optimised index file formatted for Claude, GPT-4, and Perplexity indexers.</p>
+        </div>
+        <a href="/llms.txt" class="px-5 py-2.5 bg-slate-800 hover:bg-slate-700 text-slate-200 text-sm font-medium rounded-xl border border-slate-700 transition whitespace-nowrap">
+          View /llms.txt
+        </a>
+      </div>
+    </main>
+
+    <footer class="border-t border-slate-800 bg-slate-950 px-6 py-8 text-slate-500 text-sm">
+      <div class="max-w-5xl mx-auto flex items-center justify-between">
+        <div>© 2026 Awarse Labs</div>
+        <div class="flex items-center space-x-4">
+          <a href="/" class="hover:text-slate-300">Home</a>
+          <a href="https://github.com/awarselabs/awarse-mcp" target="_blank" rel="noopener" class="hover:text-slate-300">GitHub</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

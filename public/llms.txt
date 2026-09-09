@@ -1,7 +1,17 @@
 # Awarse Labs Documentation
 
-> Local-first AI developer tools for FinOps and Playwright QA automation.
+> Local-first AI developer tools for FinOps and Playwright QA automation built on FastMCP.
 
-## Core Guides
-- [Playwright Self-Healing Locators](https://awarselabs.com/docs/healwright/playwright-self-healing-locators): Ephemeral locator remediation with FastMCP.
-- [SeatPrune Quickstart](https://awarselabs.com/docs/seatprune/quickstart): Automated M365 and GitHub license reclamation.
+## Core Documentation Guides
+- [Playwright Self-Healing Locators](https://awarselabs.com/docs/healwright/playwright-self-healing-locators): Technical guide on preventing CI flakiness and repairing broken selectors using Healwright and FastMCP.
+- [SeatPrune Quickstart: Automated SaaS Seat Reclamation](https://awarselabs.com/docs/seatprune/quickstart): Setup and configuration guide for running local-first FinOps audits to identify and reclaim inactive seats across GitHub, Slack, and Jira.
+
+## Repositories & Tools
+- awarse-mcp: https://github.com/awarselabs/awarse-mcp
+- healwright (PyPI): https://pypi.org/project/healwright/
+- seatprune (PyPI): https://pypi.org/project/seatprune/
+
+## Architecture Highlights
+- Local-first execution (no user directory data egress).
+- Zero-overhead ephemeral FastMCP servers.
+- Deterministic dry-run safety modes.
