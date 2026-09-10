@@ -2,16 +2,14 @@
 // src/components/Pricing.astro
 const STRIPE_PK = "pk_live_51UBvOaKVTuotmD6yO7x9kSewlU7y1CjP8eN2nrSVQvgicr1TNmf7kdB2IjAHHaKiaORIpGZ77dW8awW58eVYfR43000IWVRq37";
 
-const HEALWRIGHT = {
-  buyButtonId: "buy_btn_1UE4uiKVTuotmD6yTUdtV1rc",
-  // Optional: replace with your direct https://buy.stripe.com/... link if you generated one
-  paymentLink: "https://buy.stripe.com/healwright", 
+const SEATPRUNE = {
+  buyButtonId: "buy_btn_1UE4xIKVTuotmD6ymy8wYiam",
+  paymentLink: "https://buy.stripe.com/seatprune",
 };
 
-const SEATPRUNE = {
-  // Replace with the buy_btn_... ID generated from your SeatPrune Pro product page
-  buyButtonId: "REPLACE_WITH_SEATPRUNE_BUY_BUTTON_ID",
-  paymentLink: "https://buy.stripe.com/seatprune",
+const HEALWRIGHT = {
+  buyButtonId: "buy_btn_1UE4uiKVTuotmD6yTUdtV1rc",
+  paymentLink: "https://buy.stripe.com/healwright",
 };
 ---
 
@@ -152,6 +150,6 @@ const SEATPRUNE = {
     </div>
   </div>
 
-  <!-- Stripe Buy Button Script -->
+  <!-- Stripe Buy Button Script (is:inline prevents Astro bundling issues) -->
   <script is:inline async src="https://js.stripe.com/v3/buy-button.js"></script>
 </section>
