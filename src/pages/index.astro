@@ -1,6 +1,6 @@
 ---
 const canonicalUrl = "https://awarselabs.com/";
-const jsonLd = {
+const websiteJsonLd = {
   "@context": "https://schema.org",
   "@type": "WebSite",
   "name": "Awarse Labs",
@@ -12,16 +12,61 @@ const jsonLd = {
     "url": canonicalUrl
   }
 };
+
+const productJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Awarse Labs Developer Tools Suite (SeatPrune & Healwright)",
+  "description": "Local-first AI developer tools for SaaS seat reclamation (SeatPrune) and Playwright QA automation (Healwright).",
+  "brand": {
+    "@type": "Brand",
+    "name": "Awarse Labs"
+  },
+  "url": canonicalUrl,
+  "offers": {
+    "@type": "AggregateOffer",
+    "priceCurrency": "USD",
+    "lowPrice": "0",
+    "highPrice": "49",
+    "offerCount": "3",
+    "offers": [
+      {
+        "@type": "Offer",
+        "name": "Community / Open Source",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://awarselabs.com/#pricing"
+      },
+      {
+        "@type": "Offer",
+        "name": "Team Pro",
+        "price": "49",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://awarselabs.com/#pricing"
+      },
+      {
+        "@type": "Offer",
+        "name": "Enterprise",
+        "price": "Custom",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://awarselabs.com/#pricing"
+      }
+    ]
+  }
+};
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Awarse Labs | Local-First AI Tools for FinOps & QA Automation</title>
     <meta name="description" content="Eliminate zombie SaaS licenses and flaky Playwright tests. Local-first AI developer tools built on FastMCP for GitHub, Slack, and CI pipelines." />
-    <meta name="keywords" content="FinOps, SaaS seat reclamation, SeatPrune, Healwright, Playwright self-healing, FastMCP, developer tools, license auditing" />
+    <meta name="keywords" content="FinOps, SaaS seat reclamation, SeatPrune, Healwright, Playwright self-healing, FastMCP, developer tools, license auditing, pricing" />
     <link rel="canonical" href={canonicalUrl} />
 
     <meta property="og:type" content="website" />
@@ -34,7 +79,12 @@ const jsonLd = {
     <meta name="twitter:title" content="Awarse Labs | Local-First AI Tools" />
     <meta name="twitter:description" content="Local-first AI developer tools for FinOps SaaS seat reclamation and Playwright QA automation." />
 
-    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json" set:html={JSON.stringify(websiteJsonLd)} />
+    <script type="application/ld+json" set:html={JSON.stringify(productJsonLd)} />
+
+    <!-- Stripe Buy Button Async Script -->
+    <script async src="https://js.stripe.com/v3/buy-button.js"></script>
   </head>
   <body class="bg-slate-950 text-slate-100 antialiased selection:bg-cyan-500 selection:text-white min-h-screen flex flex-col">
     <!-- Header -->
@@ -47,6 +97,7 @@ const jsonLd = {
         <a href="/docs" class="hover:text-cyan-400 transition">Docs</a>
         <a href="/docs/seatprune/quickstart" class="hover:text-cyan-400 transition">SeatPrune</a>
         <a href="/docs/healwright/playwright-self-healing-locators" class="hover:text-cyan-400 transition">Healwright</a>
+        <a href="#pricing" class="text-cyan-400 font-medium hover:text-cyan-300 transition">Pricing</a>
         <a href="https://github.com/awarselabs/awarse-mcp" target="_blank" rel="noopener" class="text-slate-300 hover:text-white transition flex items-center gap-1 bg-slate-900 border border-slate-800 px-3 py-1.5 rounded-full">
           <span>GitHub</span>
           <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
@@ -69,12 +120,12 @@ const jsonLd = {
           Eliminate zombie SaaS licenses and repair flaky Playwright tests automatically without requiring invasive SaaS data egress or third-party cloud lock-in.
         </p>
         <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <a href="/docs" class="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-semibold transition shadow-lg shadow-cyan-500/25 flex items-center justify-center gap-2">
-            <span>Explore Documentation</span>
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+          <a href="#pricing" class="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-semibold transition shadow-lg shadow-cyan-500/25 flex items-center justify-center gap-2">
+            <span>View Pricing Plans</span>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
           </a>
-          <a href="https://github.com/awarselabs/awarse-mcp" target="_blank" rel="noopener" class="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-200 border border-slate-800 font-medium transition flex items-center justify-center gap-2">
-            <span>View Source Code</span>
+          <a href="/docs" class="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-200 border border-slate-800 font-medium transition flex items-center justify-center gap-2">
+            <span>Explore Documentation</span>
           </a>
         </div>
       </section>
@@ -116,7 +167,7 @@ const jsonLd = {
           <!-- Healwright Card -->
           <div class="bg-slate-900/60 border border-slate-800 rounded-2xl p-8 flex flex-col justify-between hover:border-cyan-500/40 transition group relative overflow-hidden">
             <div class="absolute top-0 right-0 p-6 opacity-10 group-hover:opacity-20 transition text-cyan-400">
-              <svg class="w-32 h-32" fill="currentColor" viewBox="0 0 24 24"><path d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.07.62-.07.94s.02.64.07.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"/></svg>
+              <svg class="w-32 h-32" fill="currentColor" viewBox="0 0 24 24"><path d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.07.62-.07.94s.02.64.07.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6-3.6z"/></svg>
             </div>
             <div>
               <div class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-blue-950/60 border border-blue-500/30 text-blue-400 mb-4">
@@ -138,6 +189,198 @@ const jsonLd = {
               <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
             </a>
           </div>
+        </div>
+      </section>
+
+      <!-- PRICING SECTION -->
+      <section id="pricing" class="py-20 px-6 max-w-7xl mx-auto border-t border-slate-800/60 scroll-mt-20">
+        <div class="text-center mb-16">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-cyan-500/30 bg-cyan-950/40 text-cyan-400 text-xs font-semibold mb-4 uppercase tracking-wider">
+            Flexible Developer Licensing
+          </div>
+          <h2 class="text-3xl md:text-5xl font-extrabold text-white tracking-tight mb-4">
+            Simple, Transparent Pricing
+          </h2>
+          <p class="text-slate-400 text-base md:text-lg max-w-2xl mx-auto">
+            Scale your developer FinOps and test automation with local-first security. Zero data egress guaranteed across all tiers.
+          </p>
+        </div>
+
+        <!-- Pricing Grid (1-col mobile, 3-col desktop) -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
+
+          <!-- Tier 1: Open Source / Community ($0) -->
+          <div class="bg-slate-900/60 border border-slate-800 rounded-3xl p-8 flex flex-col justify-between hover:border-slate-700 transition">
+            <div>
+              <div class="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2">Community</div>
+              <h3 class="text-2xl font-bold text-white mb-2">Open Source</h3>
+              <p class="text-slate-400 text-sm mb-6 leading-relaxed">
+                For individual developers & open-source projects starting with local FinOps audits.
+              </p>
+              
+              <div class="flex items-baseline gap-1 mb-8">
+                <span class="text-4xl font-extrabold text-white">$0</span>
+                <span class="text-slate-400 text-sm">/ forever</span>
+              </div>
+
+              <ul class="space-y-3 text-sm text-slate-300 mb-8 border-t border-slate-800/80 pt-6">
+                <li class="flex items-center gap-2.5">
+                  <svg class="w-4 h-4 text-cyan-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                  <span>Local CLI scanning (`seatprune scan`)</span>
+                </li>
+                <li class="flex items-center gap-2.5">
+                  <svg class="w-4 h-4 text-cyan-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                  <span>GitHub REST & GraphQL audit connector</span>
+                </li>
+                <li class="flex items-center gap-2.5">
+                  <svg class="w-4 h-4 text-cyan-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                  <span>Playwright self-healing locators (`healwright`)</span>
+                </li>
+                <li class="flex items-center gap-2.5">
+                  <svg class="w-4 h-4 text-cyan-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                  <span>FastMCP ephemeral server support</span>
+                </li>
+                <li class="flex items-center gap-2.5 text-slate-500">
+                  <svg class="w-4 h-4 text-slate-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                  <span>Community GitHub Discussions support</span>
+                </li>
+              </ul>
+            </div>
+
+            <a href="/docs/seatprune/quickstart" class="w-full py-3.5 px-6 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-semibold text-center transition border border-slate-700 block">
+              Get Started Free
+            </a>
+          </div>
+
+          <!-- Tier 2: Team Pro ($49/mo) - Highlighted -->
+          <div class="bg-gradient-to-b from-slate-900 via-slate-900/90 to-slate-950 border-2 border-cyan-500/80 rounded-3xl p-8 flex flex-col justify-between relative shadow-2xl shadow-cyan-500/10 scale-105 z-10">
+            <div class="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-gradient-to-r from-cyan-500 to-blue-600 text-slate-950 text-xs font-extrabold uppercase tracking-wider shadow-md">
+              Most Popular
+            </div>
+
+            <div>
+              <div class="text-xs font-semibold uppercase tracking-wider text-cyan-400 mb-2">Team & Pro</div>
+              <h3 class="text-2xl font-bold text-white mb-2">Pro License</h3>
+              <p class="text-slate-400 text-sm mb-6 leading-relaxed">
+                For growing engineering teams requiring automated SaaS spend reclamation & CI/CD auditing.
+              </p>
+
+              <div class="flex items-baseline gap-1 mb-8">
+                <span class="text-5xl font-extrabold text-white">$49</span>
+                <span class="text-slate-400 text-sm">/ seat / month</span>
+              </div>
+
+              <ul class="space-y-3 text-sm text-slate-200 mb-8 border-t border-slate-800/80 pt-6">
+                <li class="flex items-center gap-2.5">
+                  <svg class="w-4 h-4 text-cyan-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                  <span class="font-medium text-white">Everything in Community, plus:</span>
+                </li>
+                <li class="flex items-center gap-2.5">
+                  <svg class="w-4 h-4 text-cyan-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                  <span>Multi-provider auditing (GitHub, Slack, Jira)</span>
+                </li>
+                <li class="flex items-center gap-2.5">
+                  <svg class="w-4 h-4 text-cyan-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                  <span>Automated Slack & Webhook alert notifications</span>
+                </li>
+                <li class="flex items-center gap-2.5">
+                  <svg class="w-4 h-4 text-cyan-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                  <span>GitHub Actions monthly audit workflow</span>
+                </li>
+                <li class="flex items-center gap-2.5">
+                  <svg class="w-4 h-4 text-cyan-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                  <span>Markdown & JSON export formatting</span>
+                </li>
+                <li class="flex items-center gap-2.5">
+                  <svg class="w-4 h-4 text-cyan-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                  <span>Priority email & Discord engineering support</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="space-y-4">
+              <!-- Stripe Official Embed Buy Button -->
+              <!-- Replace buy-button-id and publishable-key with your live Stripe Dashboard Credentials -->
+              <div class="w-full text-center min-h-[44px]">
+                <stripe-buy-button
+                  buy-button-id="buy_btn_1QXXXXXXPlaceholder"
+                  publishable-key="pk_live_51XXXXXXPlaceholder">
+                </stripe-buy-button>
+                
+                <!-- Fallback button if script/button loading or for direct click -->
+                <noscript>
+                  <a href="https://buy.stripe.com/test_placeholder" class="w-full py-3.5 px-6 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-slate-950 font-bold text-center transition shadow-lg shadow-cyan-500/25 block">
+                    Subscribe with Stripe
+                  </a>
+                </noscript>
+              </div>
+
+              <!-- Stripe Payment QR Code Feature -->
+              <details class="group/qr border border-slate-800 rounded-xl bg-slate-950/60 text-xs text-slate-300">
+                <summary class="cursor-pointer py-2.5 px-3 font-semibold text-slate-400 hover:text-cyan-400 transition flex items-center justify-between">
+                  <span class="flex items-center gap-1.5">
+                    <svg class="w-4 h-4 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+                    Pay via Mobile / QR Code
+                  </span>
+                  <span class="group-open/qr:rotate-180 transition-transform">↓</span>
+                </summary>
+                <div class="p-4 border-t border-slate-800/80 text-center space-y-3">
+                  <img 
+                    src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=https://buy.stripe.com/test_placeholder" 
+                    alt="Stripe Payment Mobile QR Code"
+                    class="w-28 h-28 mx-auto rounded-xl border border-slate-700 p-1.5 bg-white shadow-md"
+                  />
+                  <p class="text-[11px] text-slate-400 leading-tight">
+                    Scan with your phone camera to complete checkout instantly via <strong class="text-white">Apple Pay</strong> or <strong class="text-white">Google Pay</strong>.
+                  </p>
+                </div>
+              </details>
+            </div>
+          </div>
+
+          <!-- Tier 3: Enterprise / Custom -->
+          <div class="bg-slate-900/60 border border-slate-800 rounded-3xl p-8 flex flex-col justify-between hover:border-slate-700 transition">
+            <div>
+              <div class="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2">Enterprise</div>
+              <h3 class="text-2xl font-bold text-white mb-2">Custom Tier</h3>
+              <p class="text-slate-400 text-sm mb-6 leading-relaxed">
+                For security-first enterprises & regulated orgs needing custom SLA, VPC, or SSO integration.
+              </p>
+
+              <div class="flex items-baseline gap-1 mb-8">
+                <span class="text-4xl font-extrabold text-white">Custom</span>
+                <span class="text-slate-400 text-sm">/ custom billing</span>
+              </div>
+
+              <ul class="space-y-3 text-sm text-slate-300 mb-8 border-t border-slate-800/80 pt-6">
+                <li class="flex items-center gap-2.5">
+                  <svg class="w-4 h-4 text-cyan-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                  <span class="font-medium text-white">Everything in Pro, plus:</span>
+                </li>
+                <li class="flex items-center gap-2.5">
+                  <svg class="w-4 h-4 text-cyan-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                  <span>Self-hosted VPC & air-gapped deployment</span>
+                </li>
+                <li class="flex items-center gap-2.5">
+                  <svg class="w-4 h-4 text-cyan-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                  <span>Custom Okta, Entra ID & SAML 2.0 connectors</span>
+                </li>
+                <li class="flex items-center gap-2.5">
+                  <svg class="w-4 h-4 text-cyan-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                  <span>Dedicated 99.9% uptime SLA & account engineer</span>
+                </li>
+                <li class="flex items-center gap-2.5">
+                  <svg class="w-4 h-4 text-cyan-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                  <span>Custom security audit & SOC 2 compliance pack</span>
+                </li>
+              </ul>
+            </div>
+
+            <a href="mailto:sales@awarselabs.com?subject=Enterprise%20Plan%20Inquiry" class="w-full py-3.5 px-6 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-semibold text-center transition border border-slate-700 block">
+              Contact Enterprise Sales
+            </a>
+          </div>
+
         </div>
       </section>
 
@@ -169,6 +412,7 @@ const jsonLd = {
         <div>© 2026 Awarse Labs. All rights reserved.</div>
         <div class="flex items-center space-x-6">
           <a href="/docs" class="hover:text-slate-300 transition">Docs</a>
+          <a href="#pricing" class="hover:text-slate-300 transition">Pricing</a>
           <a href="/llms.txt" class="hover:text-slate-300 transition">llms.txt</a>
           <a href="https://pypi.org/project/seatprune/" target="_blank" rel="noopener" class="hover:text-slate-300 transition">PyPI (SeatPrune)</a>
           <a href="https://pypi.org/project/healwright/" target="_blank" rel="noopener" class="hover:text-slate-300 transition">PyPI (Healwright)</a>
