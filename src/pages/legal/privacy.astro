@@ -1,0 +1,114 @@
+---
+// src/pages/legal/privacy.astro
+import Footer from '../../components/Footer.astro';
+
+const effectiveDate = "September 17, 2026";
+---
+
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Privacy Policy | Awarse Labs</title>
+    <meta name="description" content="GDPR-compliant Privacy Policy for Awarse Labs detailing local-first architecture and Stripe billing." />
+  </head>
+  <body class="bg-slate-950 text-slate-300 antialiased min-h-screen flex flex-col justify-between selection:bg-cyan-500/20 selection:text-cyan-300">
+    <header class="border-b border-slate-800/80 py-4 px-6">
+      <div class="max-w-4xl mx-auto flex items-center justify-between">
+        <a href="/" class="text-sm font-bold tracking-wider text-white uppercase hover:text-cyan-400 transition">
+          Awarse Labs
+        </a>
+        <a href="/" class="text-xs text-slate-400 hover:text-white transition">← Back to Home</a>
+      </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-4 py-16 sm:px-6 w-full flex-1">
+      <div class="border-b border-slate-800 pb-8 mb-10">
+        <h1 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">Privacy Policy</h1>
+        <p class="text-sm text-slate-500 mt-2">Effective Date: {effectiveDate}</p>
+      </div>
+
+      <div class="prose prose-invert prose-slate max-w-none space-y-8 text-sm leading-relaxed text-slate-300">
+        <section>
+          <h2 class="text-lg font-semibold text-white mb-3">1. Commitment to Privacy & Controller Identity</h2>
+          <p>
+            <strong>Awarse Labs</strong> (CRO Business Name Registration No. 793328, Ireland), operated by Sean Kildunne ("we", "us"), is committed to privacy-by-design and compliance with the General Data Protection Regulation (EU) 2016/679 ("GDPR") and the Irish Data Protection Act 2018.
+          </p>
+          <p class="mt-2">
+            This Privacy Policy describes how we process data when you browse <a href="https://awarselabs.com" class="text-cyan-400 underline">awarselabs.com</a>, purchase our developer tools, or run our applications.
+          </p>
+        </section>
+
+        <!-- Local-First Architecture Guarantee -->
+        <section class="p-5 rounded-xl border border-cyan-500/30 bg-cyan-950/20">
+          <h2 class="text-base font-semibold text-cyan-300 mb-2">2. Local-First & Zero DOM Egress Architecture</h2>
+          <p class="text-slate-300 leading-relaxed">
+            Our core developer tooling—including <strong>Healwright</strong> (Playwright self-healing locators) and <strong>SeatPrune</strong> (SaaS FinOps agents)—is built on local FastMCP execution.
+          </p>
+          <ul class="list-disc pl-5 mt-2 space-y-1 text-slate-300">
+            <li><strong>Zero DOM / Test Egress:</strong> Web page DOM structures, Playwright session screenshots, trace logs, test credentials, and application code remain strictly on your local machine or private CI runner.</li>
+            <li><strong>No Cloud Model Forwarding:</strong> Test execution artifacts are never transmitted to external cloud endpoints or proprietary LLM telemetry servers by our tools.</li>
+            <li><strong>Local MCP Processing:</strong> All locator repairs, heuristics, and license audit parsing occur within local processes communicating over standard I/O (stdio).</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2 class="text-lg font-semibold text-white mb-3">3. Personal Data We Collect</h2>
+          <div class="space-y-3">
+            <div>
+              <p class="font-medium text-white">A. Website Usage & Edge Analytics</p>
+              <p class="text-slate-400 text-xs mt-1">
+                We host our static web pages on Cloudflare Pages. Cloudflare Web Analytics collects privacy-preserving edge metrics (country of origin, browser user-agent, referrers) without setting tracking cookies or collecting personal identifiers.
+              </p>
+            </div>
+            <div>
+              <p class="font-medium text-white">B. Payment & Subscription Details (Stripe)</p>
+              <p class="text-slate-400 text-xs mt-1">
+                Payment transactions are processed directly by Stripe Payments Europe, Ltd. We do not store or process your complete credit card numbers, CVVs, or bank credentials. Stripe collects billing name, email address, IP address, and transaction metadata to process recurring charges, manage invoices, and prevent fraud under Stripe's independent privacy policy.
+              </p>
+            </div>
+            <div>
+              <p class="font-medium text-white">C. Direct Communications</p>
+              <p class="text-slate-400 text-xs mt-1">
+                If you contact us via <a href="mailto:support@awarselabs.com" class="text-cyan-400 underline">support@awarselabs.com</a>, we retain your email address and conversation history solely to resolve technical queries and deliver customer support.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h2 class="text-lg font-semibold text-white mb-3">4. Legal Bases for Processing (GDPR Article 6)</h2>
+          <ul class="list-disc pl-5 space-y-2">
+            <li><strong>Contractual Performance (Art. 6(1)(b)):</strong> To manage your active software subscription, deliver license updates, and process billing.</li>
+            <li><strong>Legal Obligations (Art. 6(1)(c)):</strong> To maintain statutory financial records, CRO registrations, and tax documentation required by Irish law and Revenue.</li>
+            <li><strong>Legitimate Interests (Art. 6(1)(f)):</strong> To maintain the security, uptime, and integrity of our web deployment infrastructure.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2 class="text-lg font-semibold text-white mb-3">5. Your GDPR Rights</h2>
+          <p>
+            Under the GDPR, individuals located in Ireland, the EU, and the UK possess statutory rights regarding their personal data, including the right of access, rectification, erasure, restriction of processing, and data portability.
+          </p>
+          <p class="mt-2">
+            To exercise any of these rights, email <a href="mailto:support@awarselabs.com" class="text-cyan-400 underline">support@awarselabs.com</a>. You also have the right to lodge a complaint with the Irish Data Protection Commission (DPC) at <a href="https://www.dataprotection.ie" target="_blank" rel="noopener noreferrer" class="text-cyan-400 underline">dataprotection.ie</a>.
+          </p>
+        </section>
+
+        <section>
+          <h2 class="text-lg font-semibold text-white mb-3">6. Contact Details</h2>
+          <div class="p-4 rounded-lg bg-slate-900 border border-slate-800 text-xs">
+            <p><strong>Awarse Labs (Data Controller)</strong></p>
+            <p>CRO Registration No.: 793328</p>
+            <p>Proprietor: Sean Kildunne</p>
+            <p>Dublin, Ireland</p>
+            <p>Email: <a href="mailto:support@awarselabs.com" class="text-cyan-400 underline">support@awarselabs.com</a></p>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <Footer />
+  </body>
+</html>
