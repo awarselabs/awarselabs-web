@@ -1,0 +1,94 @@
+---
+// src/pages/legal/terms.astro
+import Footer from '../../components/Footer.astro';
+
+const effectiveDate = "September 17, 2026";
+---
+
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Terms of Service | Awarse Labs</title>
+    <meta name="description" content="Terms of Service and commercial licensing for Awarse Labs developer tools." />
+  </head>
+  <body class="bg-slate-950 text-slate-300 antialiased min-h-screen flex flex-col justify-between selection:bg-cyan-500/20 selection:text-cyan-300">
+    <header class="border-b border-slate-800/80 py-4 px-6">
+      <div class="max-w-4xl mx-auto flex items-center justify-between">
+        <a href="/" class="text-sm font-bold tracking-wider text-white uppercase hover:text-cyan-400 transition">
+          Awarse Labs
+        </a>
+        <a href="/" class="text-xs text-slate-400 hover:text-white transition">← Back to Home</a>
+      </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-4 py-16 sm:px-6 w-full flex-1">
+      <div class="border-b border-slate-800 pb-8 mb-10">
+        <h1 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">Terms of Service</h1>
+        <p class="text-sm text-slate-500 mt-2">Effective Date: {effectiveDate}</p>
+      </div>
+
+      <div class="prose prose-invert prose-slate max-w-none space-y-8 text-sm leading-relaxed text-slate-300">
+        <section>
+          <h2 class="text-lg font-semibold text-white mb-3">1. Legal Entity & Agreement</h2>
+          <p>
+            These Terms of Service ("Terms") constitute a legally binding agreement between you ("Customer", "User") and 
+            <strong>Awarse Labs</strong> (CRO Business Name Registration No. 793328, registered in Ireland), operated by individual proprietor Sean Kildunne ("we", "us", "our").
+          </p>
+          <p class="mt-2">
+            By accessing <a href="https://awarselabs.com" class="text-cyan-400 underline">awarselabs.com</a>, installing our software packages (including <em>Healwright</em> and <em>SeatPrune</em>), or subscribing to our Pro tiers, you agree to these Terms.
+          </p>
+        </section>
+
+        <section>
+          <h2 class="text-lg font-semibold text-white mb-3">2. License Grant & Software Usage</h2>
+          <ul class="list-disc pl-5 space-y-2">
+            <li><strong>Open Source Core:</strong> Open-source repositories published under the MIT license remain governed by their respective licenses.</li>
+            <li><strong>Commercial Subscriptions:</strong> Subscribing to Pro editions grants you a non-exclusive, revocable, non-transferable license to use pre-built binary distributions, advanced agent integrations, and premium feature updates for your internal software development and QA operations.</li>
+            <li><strong>Local Runtime Scope:</strong> Software execution is designed to run locally or inside your designated CI/CD environments. You may not reverse-engineer, redistribute, or resell licensed binary components as standalone competitive products.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2 class="text-lg font-semibold text-white mb-3">3. Billing, Renewals, and Cancellations</h2>
+          <p>
+            Subscription billing is handled securely via <strong>Stripe</strong>. By purchasing a subscription (€19.00/month for SeatPrune Pro or €29.00/month for Healwright), you authorize recurring automatic charges to your designated payment method until cancellation.
+          </p>
+          <p class="mt-2">
+            You may cancel your recurring subscription at any time through your Stripe billing portal link or by emailing <a href="mailto:support@awarselabs.com" class="text-cyan-400 underline">support@awarselabs.com</a>. Cancellations take effect at the conclusion of the active billing period.
+          </p>
+        </section>
+
+        <section>
+          <h2 class="text-lg font-semibold text-white mb-3">4. Limitation of Liability & Warranty Disclaimer</h2>
+          <p>
+            Our software and services are provided on an "AS IS" and "AS AVAILABLE" basis without warranties of any kind, whether express or implied. In no event shall Awarse Labs or its proprietor be liable for direct, indirect, incidental, consequential, or punitive damages resulting from test execution errors, locator remediation misconfigurations, or SaaS seat de-provisioning activities.
+          </p>
+        </section>
+
+        <section>
+          <h2 class="text-lg font-semibold text-white mb-3">5. Governing Law and Jurisdiction</h2>
+          <p>
+            These Terms are governed by and construed in accordance with the laws of <strong>Ireland</strong>. Any disputes arising in connection with these Terms shall be subject to the exclusive jurisdiction of the courts of Ireland.
+          </p>
+        </section>
+
+        <section>
+          <h2 class="text-lg font-semibold text-white mb-3">6. Contact Information</h2>
+          <p>
+            Inquiries regarding these Terms should be directed to:
+          </p>
+          <div class="mt-3 p-4 rounded-lg bg-slate-900 border border-slate-800 text-xs">
+            <p><strong>Awarse Labs</strong> (CRO Reg. No. 793328)</p>
+            <p>Proprietor: Sean Kildunne</p>
+            <p>Dublin, Ireland</p>
+            <p>Email: <a href="mailto:support@awarselabs.com" class="text-cyan-400 underline">support@awarselabs.com</a></p>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <Footer />
+  </body>
+</html>
