@@ -15,50 +15,40 @@ const websiteJsonLd = {
   }
 };
 
-const productJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "Product",
-  "name": "Awarse Labs Developer Tools Suite (SeatPrune & Healwright)",
-  "description": "Local-first AI developer tools for SaaS seat reclamation (SeatPrune) and Playwright QA automation (Healwright).",
-  "brand": {
-    "@type": "Brand",
-    "name": "Awarse Labs"
+const softwareAppJsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Healwright",
+    "applicationCategory": "DeveloperApplication",
+    "operatingSystem": "Cross-platform",
+    "description": "Ephemeral self-healing locators with local FastMCP intelligence for Playwright.",
+    "url": "https://awarselabs.com/#pricing",
+    "offers": {
+      "@type": "Offer",
+      "price": "29.00",
+      "priceCurrency": "EUR",
+      "availability": "https://schema.org/InStock",
+      "url": "https://awarselabs.com/#pricing"
+    }
   },
-  "url": canonicalUrl,
-  "offers": {
-    "@type": "AggregateOffer",
-    "priceCurrency": "USD",
-    "lowPrice": "0",
-    "highPrice": "49",
-    "offerCount": "3",
-    "offers": [
-      {
-        "@type": "Offer",
-        "name": "Community / Open Source",
-        "price": "0",
-        "priceCurrency": "USD",
-        "availability": "https://schema.org/InStock",
-        "url": "https://awarselabs.com/#pricing"
-      },
-      {
-        "@type": "Offer",
-        "name": "Team Pro",
-        "price": "49",
-        "priceCurrency": "USD",
-        "availability": "https://schema.org/InStock",
-        "url": "https://awarselabs.com/#pricing"
-      },
-      {
-        "@type": "Offer",
-        "name": "Enterprise",
-        "price": "Custom",
-        "priceCurrency": "USD",
-        "availability": "https://schema.org/InStock",
-        "url": "https://awarselabs.com/#pricing"
-      }
-    ]
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "SeatPrune Pro",
+    "applicationCategory": "DeveloperApplication",
+    "operatingSystem": "Cross-platform",
+    "description": "Automated SaaS license reclamation across GitHub, Slack & Jira.",
+    "url": "https://awarselabs.com/#pricing",
+    "offers": {
+      "@type": "Offer",
+      "price": "19.00",
+      "priceCurrency": "EUR",
+      "availability": "https://schema.org/InStock",
+      "url": "https://awarselabs.com/#pricing"
+    }
   }
-};
+];
 ---
 
 <!doctype html>
@@ -83,7 +73,7 @@ const productJsonLd = {
 
     <!-- Schema.org JSON-LD -->
     <script type="application/ld+json" set:html={JSON.stringify(websiteJsonLd)} />
-    <script type="application/ld+json" set:html={JSON.stringify(productJsonLd)} />
+    <script type="application/ld+json" set:html={JSON.stringify(softwareAppJsonLd)} />
 
     <!-- Stripe Buy Button Async Script -->
     <script async src="https://js.stripe.com/v3/buy-button.js"></script>
