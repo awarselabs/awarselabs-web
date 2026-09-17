@@ -1,4 +1,6 @@
 ---
+import Footer from '../../components/Footer.astro';
+
 const canonicalUrl = "https://awarselabs.com/docs";
 ---
 
@@ -73,14 +75,6 @@ const canonicalUrl = "https://awarselabs.com/docs";
       </div>
     </main>
 
-    <footer class="border-t border-slate-800 bg-slate-950 px-6 py-8 text-slate-500 text-sm">
-      <div class="max-w-5xl mx-auto flex items-center justify-between">
-        <div>© 2026 Awarse Labs</div>
-        <div class="flex items-center space-x-4">
-          <a href="/" class="hover:text-slate-300">Home</a>
-          <a href="https://github.com/awarselabs/awarse-mcp" target="_blank" rel="noopener" class="hover:text-slate-300">GitHub</a>
-        </div>
-      </div>
-    </footer>
+    <Footer />
   </body>
 </html>

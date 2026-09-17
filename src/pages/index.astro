@@ -1,5 +1,6 @@
 ---
 import Pricing from '../components/Pricing.astro';
+import Footer from '../components/Footer.astro';
 
 const canonicalUrl = "https://awarselabs.com/";
 const websiteJsonLd = {
@@ -210,17 +211,6 @@ const softwareAppJsonLd = [
     </main>
 
     <!-- Footer -->
-    <footer class="border-t border-slate-800 bg-slate-950 px-6 py-8 text-slate-500 text-sm">
-      <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
-        <div>© 2026 Awarse Labs. All rights reserved.</div>
-        <div class="flex items-center space-x-6">
-          <a href="/docs" class="hover:text-slate-300 transition">Docs</a>
-          <a href="#pricing" class="hover:text-slate-300 transition">Pricing</a>
-          <a href="/llms.txt" class="hover:text-slate-300 transition">llms.txt</a>
-          <a href="https://pypi.org/project/seatprune/" target="_blank" rel="noopener" class="hover:text-slate-300 transition">PyPI (SeatPrune)</a>
-          <a href="https://pypi.org/project/healwright/" target="_blank" rel="noopener" class="hover:text-slate-300 transition">PyPI (Healwright)</a>
-        </div>
-      </div>
-    </footer>
+    <Footer />
   </body>
 </html>
